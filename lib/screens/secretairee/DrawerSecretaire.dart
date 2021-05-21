@@ -1,19 +1,7 @@
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/addappoint.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/adddossier.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/appoinements.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/archive.dart';
+
 import 'package:argon_flutter/screens/directory.dart';
 import 'package:argon_flutter/screens/doctor/loginDoctor.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/doctorquestions.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/finance.dart';
 import 'package:argon_flutter/screens/login-patient.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/homedoctor.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/listingconsult.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/listingmedfold.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/newconsult.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/newpatient.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/listingpatient.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/profadmin.dart';
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,6 +9,15 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:argon_flutter/constants/Theme.dart';
 
 import 'package:argon_flutter/widgets/drawer-tile.dart';
+
+import '../doctor/addappoint.dart';
+import '../doctor/appoinements.dart';
+import '../doctor/doctorquestions.dart';
+import '../doctor/finance.dart';
+import '../doctor/homedoctor.dart';
+import '../doctor/listingpatient.dart';
+import '../doctor/newconsult.dart';
+import '../doctor/profadmin.dart';
 
 class SecretaireDrawer extends StatelessWidget {
   final String currentPage;

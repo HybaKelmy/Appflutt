@@ -5,8 +5,9 @@ import 'package:argon_flutter/constants/Theme.dart';
 
 //widgets
 import 'package:argon_flutter/widgets/navbar.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'drawer.dart';
 
 
 class Adddoss extends StatefulWidget {
@@ -266,15 +267,8 @@ class _AdddossState extends State<Adddoss> {
                                   }
                                 });
                               }
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4.0),
-                              );
-                              child: Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 16.0, right: 16.0, top: 12, bottom: 12),
-                                  child: Text("Add the appointment ",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w600, fontSize: 16.0)));
+
+                              
                             },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0),
@@ -306,6 +300,7 @@ class _AdddossState extends State<Adddoss> {
     );
   }
 }
+
 
 
 

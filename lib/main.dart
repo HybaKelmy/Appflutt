@@ -1,29 +1,14 @@
 import 'package:argon_flutter/screens/DateTimePicker.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/addappoint.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/addcontact.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/adddossier.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/appoinements.dart';
 
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/archive.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/cabineexp.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/dailyrecip.dart';
 import 'package:argon_flutter/screens/directory.dart';
 import 'package:argon_flutter/screens/doctor/homedoctor.dart';
 import 'package:argon_flutter/screens/doctor/newpatient.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/doctorquestions.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/finance.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/listingconsult.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/listingmedfold.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/listingpatient.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/medicalfolder.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/modifieinfosprof.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/newconsult.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/profadmin.dart';
 import 'package:argon_flutter/screens/home_screen_patient.dart';
 import 'package:argon_flutter/screens/onboarding_screen.dart';
 import 'package:argon_flutter/screens/Patient.dart';
 import 'package:argon_flutter/screens/patient/question.dart';
 import 'package:argon_flutter/screens/patient/rendezvous.dart';
+import 'package:argon_flutter/screens/patient/response.dart';
 import 'package:argon_flutter/screens/secretairee/homesecretaire.dart';
 import 'package:argon_flutter/widgets/onBoarding.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +26,23 @@ import 'package:argon_flutter/screens/elements.dart';
 import 'package:argon_flutter/screens/detail_screen.dart';
 import 'package:argon_flutter/components/doctor_card.dart';
 import 'package:argon_flutter/components/category_card.dart';
+
+import 'screens/doctor/addappoint.dart';
+import 'screens/doctor/addcontact.dart';
+import 'screens/doctor/adddossier.dart';
+import 'screens/doctor/appoinements.dart';
+import 'screens/doctor/archive.dart';
+import 'screens/doctor/cabineexp.dart';
+import 'screens/doctor/dailyrecip.dart';
+import 'screens/doctor/doctorquestions.dart';
+import 'screens/doctor/finance.dart';
+import 'screens/doctor/listingconsult.dart';
+import 'screens/doctor/listingmedfold.dart';
+import 'screens/doctor/listingpatient.dart';
+import 'screens/doctor/medicalfolder.dart';
+import 'screens/doctor/modifieinfosprof.dart';
+import 'screens/doctor/newconsult.dart';
+import 'screens/doctor/profadmin.dart';
 
 void main() => runApp(MyApp());
 
@@ -84,10 +86,12 @@ class MyApp extends StatelessWidget {
           "/modifierinfosprof": (BuildContext context) => new Modifyinf(),
           "/addcontact": (BuildContext context) => new Addcont(),
           "/listingmedfold": (BuildContext context) => new Medfold(),
+          "/response": (BuildContext context) => new Response(),
           "/medicalfolder": (BuildContext context) => new Folder(),
           "/adddossier": (BuildContext context) => new Adddoss(),
           "/dailyrecip": (BuildContext context) => new Daily(),
           "/cabinetexp": (BuildContext context) => new Cabex(),
+          
 
               // widget secretaire
 

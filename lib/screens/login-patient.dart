@@ -1,5 +1,4 @@
 import 'package:argon_flutter/screens/home_screen_patient.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/homedoctor.dart';
 import 'package:argon_flutter/screens/SignUpPatient.dart';
 import 'package:argon_flutter/screens/Patient.dart';
 import 'package:argon_flutter/services/service-patient/AuthPatient.dart';

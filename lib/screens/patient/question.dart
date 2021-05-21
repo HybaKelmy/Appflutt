@@ -2,10 +2,9 @@ import 'package:argon_flutter/screens/patient/Drawerpatient.dart';
 import 'package:flutter/material.dart';
 
 import 'package:argon_flutter/constants/Theme.dart';
-
+import 'package:file_picker/file_picker.dart';
 //widgets
 import 'package:argon_flutter/widgets/navbar.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
 import 'package:argon_flutter/widgets/input.dart';
 import 'package:argon_flutter/widgets/table-cell.dart';
 
@@ -92,43 +91,10 @@ class _ElementsState extends State<Question> {
                     ),
                   ),
 
-                  Padding(
-                    padding: const EdgeInsets.only(left: 1.0, top: 32, bottom: 32),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Do you want to send this message anonymously ?",
-                          style: TextStyle(
-                              color: ArgonColors.text,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16)),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Hide my identity",
-                          style: TextStyle(color: ArgonColors.text)),
-                      Switch.adaptive(
-                          value: switchValueOne,
-                          onChanged: (bool newValue) =>
-                              setState(() => switchValueOne = newValue),
-                          activeColor: Colors.lightBlue[400]
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 100.0, top: 32, bottom: 32),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Add an attached file",
-                          style: TextStyle(
-                              color: ArgonColors.text,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16)
-                      ),
-
-                    ),
-                  ),
+                  
+                  
+              
+                  
 
 
 

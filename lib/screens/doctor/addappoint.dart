@@ -1,14 +1,16 @@
 import 'package:argon_flutter/services/service-doctor/addAppoinment.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:argon_flutter/constants/Theme.dart';
 
 //widgets
 import 'package:argon_flutter/widgets/navbar.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
 import 'package:argon_flutter/widgets/input.dart';
 import 'package:argon_flutter/widgets/table-cell.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'drawer.dart';
 
 class Addappoint extends StatefulWidget {
   @override
@@ -163,25 +165,36 @@ class _AddappointState extends State<Addappoint> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(height: 40,),
-                          ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                                    (Set<MaterialState> states) {
 
-                                  return Colors.lightBlue[400];
+                          Padding(
 
-                                },
-                              ),
+                            padding: const EdgeInsets.only(left: 8.0, top: 30),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text("Select a date :",
+                                  style: TextStyle(
+                                      color: ArgonColors.text,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16)),
                             ),
-                            onPressed: _selectDate,
-                            child: Text('SELECT DATE'),
                           ),
-                          SizedBox(height: 20),
-                          Text(
-                            'Selected date: $_date',
+
+                          Container(
+                            padding: const EdgeInsets.only(left: 8.0, top: 20,bottom: 10),
+
+                            height: 100,
+                            child: CupertinoDatePicker(
+
+                              mode: CupertinoDatePickerMode.date,
+                              initialDateTime: DateTime(1969, 1, 1),
+                              onDateTimeChanged: (DateTime newDateTime) {
+                                setState(() {
+                                  _date = newDateTime;
+                                  print(newDateTime);
+                                });                              },
+                            ),
                           ),
-                          SizedBox(height: 40),
+
                           ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.resolveWith<Color>(
@@ -250,17 +263,17 @@ class _AddappointState extends State<Addappoint> {
                               );
                               }
                               });
-                              }
+                              }},
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4.0),
-                        );
+                        ),
                         child: Padding(
                             padding: EdgeInsets.only(
                                 left: 16.0, right: 16.0, top: 12, bottom: 12),
                             child: Text("Add the appointment ",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w600, fontSize: 16.0)));
-                        }),
+                                    fontWeight: FontWeight.w600, fontSize: 16.0))),
+                        ),
                     ),
                   ),
 
@@ -269,4 +282,3 @@ class _AddappointState extends State<Addappoint> {
             )));
   }
 }
-

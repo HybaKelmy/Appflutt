@@ -8,7 +8,6 @@ import 'package:argon_flutter/widgets/navbar.dart';
 import 'package:argon_flutter/widgets/card-horizontal.dart';
 import 'package:argon_flutter/widgets/card-small.dart';
 import 'package:argon_flutter/widgets/card-square.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
 
 final Map<String, Map<String, String>> homeCards = {
 

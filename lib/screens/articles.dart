@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:argon_flutter/constants/Theme.dart';
 
 //widgets
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
 import 'package:argon_flutter/widgets/navbar.dart';
 import 'package:argon_flutter/widgets/card-horizontal.dart';
 import 'package:argon_flutter/widgets/card-small.dart';
 import 'package:argon_flutter/widgets/card-square.dart';
 import 'package:argon_flutter/widgets/card-category.dart';
 import 'package:argon_flutter/widgets/slider-product.dart';
+
+import 'doctor/drawer.dart';
 
 final Map<String, Map<String, dynamic>> articlesCards = {
   "Ice Cream": {

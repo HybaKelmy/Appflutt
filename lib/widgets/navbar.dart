@@ -146,7 +146,7 @@ class _NavbarState extends State<Navbar> {
                         suffixIcon:
                         Icon(Icons.zoom_in, color: ArgonColors.muted),
                         onTap: () {
-                          Navigator.pushNamed(context, '/pro');
+                          Navigator.pushNamed(context, '/');
                         }),
                   ),
                 SizedBox(

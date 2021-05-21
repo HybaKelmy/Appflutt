@@ -1,24 +1,30 @@
+import 'package:argon_flutter/screens/doctor/drawer.dart';
+import 'package:argon_flutter/services/service-doctor/addAppoinment.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_calendar/flutter_clean_calendar.dart';
 
-void main() => runApp(RendezVous());
-class RendezVous extends StatelessWidget {
+import 'package:argon_flutter/constants/Theme.dart';
+
+//widgets
+import 'package:argon_flutter/widgets/navbar.dart';
+import 'package:argon_flutter/widgets/input.dart';
+import 'package:argon_flutter/widgets/table-cell.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import 'Drawerpatient.dart';
+
+class RendezVous extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-
-      home: DemoApp(),
-    );
-  }
+  _RendezVousState createState() => _RendezVousState();
 }
 
-class DemoApp extends StatefulWidget {
-  @override
-  _DemoAppState createState() => _DemoAppState();
-}
+class _RendezVousState extends State<RendezVous> {
+  var nameController = TextEditingController();
+  var phonenumberController = TextEditingController();
+  var emailController = TextEditingController();
 
-class _DemoAppState extends State<DemoApp> {
+
+
   DateTime _date = DateTime(2021, 11, 17);
   TimeOfDay _time = TimeOfDay(hour: 9, minute: 00);
   TimeOfDay time;
@@ -50,124 +56,170 @@ class _DemoAppState extends State<DemoApp> {
       });
     }}
 
-  final Map<DateTime, List> events = {
-    DateTime(2020,12,12): [
-      {'Name': 'Your event Name', 'isDone' : true},
-      {'Name': 'Your event Name 2', 'isDone' : true},
-      {'Name': 'Your event Name 3', 'isDone' : false},
-    ],
-    DateTime(2020,12,2): [
-      {'Name': 'Your event Name', 'isDone' : false},
-      {'Name': 'Your event Name 2', 'isDone' : true},
-      {'Name': 'Your event Name 3', 'isDone' : false},
-    ]
-  };
+  bool switchValueOne;
+  bool switchValueTwo;
 
-  void _handleData(date){
-    setState(() {
-      selectedDay = date;
-      selectedEvent = events[selectedDay] ?? [];
-    });
-    print(selectedDay);
-  }
-
-  @override
   void initState() {
-    // TODO: implement initState
-    selectedEvent = events[selectedDay] ?? [];
+    setState(() {
+      switchValueOne = true;
+      switchValueTwo = false;
+    });
     super.initState();
-    time = TimeOfDay.now();
   }
-  Future<Null> selectTime(BuildContext context) async {
-    picked = await showTimePicker(context: context, initialTime: time);
 
-    if (picked != null )
-      setState(() {
-        time = picked;
-      });
-  }
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-        appBar: AppBar(
-
-          title: Text('Rendez-vous'),
-          centerTitle: true,
-
-
-
+        appBar: Navbar(
+          backButton: true,
+          bgColor: Colors.lightBlue[400],
+          title: "Add an appointment",
         ),
+        backgroundColor: ArgonColors.bgColorScreen,
+        drawer: ArgonDrawer(currentPage: "RendezVous"),
+        body: SingleChildScrollView(
 
 
-        body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(height: 1),
-                  Text(
-                    'Select date and time for the appointment',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
-                  SizedBox(height: 40),
-                  ElevatedButton(
 
-                    onPressed: _selectDate,
-                    child: Text('SELECT DATE'),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Selected date: $_date',
-                  ),
-                  SizedBox(height: 40),
+            child: Padding(
+              padding: EdgeInsets.only(right: 24, left: 24, bottom: 36),
+              child: SafeArea(
+                bottom: true,
+                child: Column(children: [
 
-                  ElevatedButton(
-                    onPressed: _selectTime,
-                    child: Text('SELECT TIME'),
+                  
+
+                  
+                  
+
+                
+                  
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0, top: 40),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+
+                          Padding(
+
+                            padding: const EdgeInsets.only(left: 8.0, top: 30),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text("Select a date :",
+                                  style: TextStyle(
+                                      color: ArgonColors.text,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16)),
+                            ),
+                          ),
+                          
+
+                          Container(
+                            padding: const EdgeInsets.only(left: 8.0, top: 20,bottom: 10),
+
+                            height: 100,
+                            child: CupertinoDatePicker(
+
+                              mode: CupertinoDatePickerMode.date,
+                              initialDateTime: DateTime(1969, 1, 1),
+                              onDateTimeChanged: (DateTime newDateTime) {
+                                setState(() {
+                                  _date = newDateTime;
+                                  print(newDateTime);
+                                });                              },
+                            ),
+                          ),
+                            Padding(
+                    padding: const EdgeInsets.only(left: 8.0, top: 40),
                   ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Selected time: ${_time.format(context)}',
+
+                          ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+
+                                  return Colors.lightBlue[400];
+
+                                },
+                              ),
+                            ),
+                            onPressed: _selectTime,
+                            child: Text('SELECT TIME'),
+                          ),
+                          SizedBox(height: 20),
+                          Text(
+                            'Selected time: ${_time.format(context)}',
+                          ),
+                        ]),
                   ),
-                  SizedBox(
+                    Padding(
+                    padding: const EdgeInsets.only(left: 8.0, top: 40),
+                  ),
+                 SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding:
                       const EdgeInsets.only(left: 25.0, right: 25.0, top: 30),
-                      // ignore: deprecated_member_use
                       child: RaisedButton(
-                        textColor: Colors.white,
-                        color: Colors.blueGrey,
+                        textColor: ArgonColors.white,
+                        color: Colors.lightBlue[400],
                         onPressed: () {
-                          // Respond to button press
-                          Navigator.pushReplacementNamed(context, '/home_screen_patient');
-                        },
+                          print(nameController.text);
+                          print(phonenumberController.text);
+                          print(emailController.text);
+                          print(_date);
+                          print(_time);
+                          if (
+                              nameController.text.isEmpty ||
+                              phonenumberController.text.isEmpty ||
+                              emailController.text.isEmpty
+                             ){
+                             Fluttertoast.showToast(
+                             msg: 'all fields should not be empty.',
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.BOTTOM,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.red,
+                          textColor: Colors.white,
+                          fontSize: 16.0
+                          );
+                            }
+                              else {
+                            AddAppoinment().addappoin(
+                              nameController.text,
+                              phonenumberController.text,
+                              emailController.text,
+                              _date,
+                              _time,).then((val) {
+                              if (val.data['success']) {
+                              var token = val.data['token'];
+                              Fluttertoast.showToast(
+                              msg: 'Patient Added',
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.green,
+                              textColor: Colors.white,
+                              fontSize: 16.0
+                              );
+                              }
+                              });
+                              }},
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4.0),
                         ),
                         child: Padding(
                             padding: EdgeInsets.only(
-                                left: 7.0, right: 16.0, top: 12, bottom: 12),
-                            child: Text("CONFIRM REQUEST ",
+                                left: 16.0, right: 16.0, top: 12, bottom: 12),
+                            child: Text("Add the appointment ",
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600, fontSize: 16.0))),
-                      ),
+                        ),
                     ),
-
-
-
-
                   ),
 
-                ])
-
-        )
-
-
-    );
-
-
-
-
+                ]),
+              ),
+            )));
   }
 }

@@ -4,7 +4,8 @@ import 'package:argon_flutter/constants/Theme.dart';
 
 //widgets
 import 'package:argon_flutter/widgets/navbar.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
+
+import 'drawer.dart';
 
 
 class Medfold extends StatefulWidget {

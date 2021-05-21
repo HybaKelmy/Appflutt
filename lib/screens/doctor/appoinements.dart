@@ -8,7 +8,8 @@ import 'package:argon_flutter/constants/Theme.dart';
 import 'package:argon_flutter/widgets/navbar.dart';
 import 'package:argon_flutter/widgets/input.dart';
 
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
+import 'drawer.dart';
+
 
 class Appoint extends StatefulWidget {
   @override

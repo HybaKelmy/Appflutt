@@ -4,7 +4,8 @@ import 'package:argon_flutter/constants/Theme.dart';
 
 //widgets
 import 'package:argon_flutter/widgets/navbar.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
+
+import 'drawer.dart';
 
 
 class Fin extends StatefulWidget {
@@ -37,34 +38,114 @@ class _FinState extends State<Fin> {
         ),
         backgroundColor: ArgonColors.bgColorScreen,
         drawer: ArgonDrawer(currentPage: "Fin"),
-        body: SingleChildScrollView(
-
-
-
-            child: Padding(
-              padding: EdgeInsets.only(right: 24, left: 24, bottom: 36),
-              child: SafeArea(
-                bottom: true,
-                child: Column(children: [
-
-
-
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0, top: 40),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("The daily recipe",
-                          style: TextStyle(
-                              color: ArgonColors.text,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16)),
-                    ),
-                  ),
-
-                ]),
+        body: ListView(
+          children: <Widget>[
+              Container(
+             width: 100,
+             height: 30,
+            ),
+            Container(
+             width: 100,
+             height: 130,
+             
+              child: Card(
+                margin: EdgeInsets.fromLTRB(40.0, 10.0, 40.0, 10.0),
+                color: Colors.lightBlue[400],
+                
+                 child: Column(children: <Widget>[
+      Text('Today Expenses',
+      style: TextStyle(
+        fontSize: 18.0,
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+      )),
+      
+      
+      SizedBox(height: 30.0),
+      Text(
+        '0 dt',
+        style: TextStyle(
+          fontSize: 14.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white
+        ),
+      )
+    ],),
               ),
-            )));
+              
+            ),
+             Container(
+             width: 100,
+             height: 30
+            ),
+            Container(
+             width: 100,
+             height: 130,
+             
+              child: Card(
+                margin: EdgeInsets.fromLTRB(40.0, 10.0, 40.0, 10.0),
+                color: Colors.lightBlue[400],
+                
+                 child: Column(children: <Widget>[
+      Text('Today Incomes',
+      style: TextStyle(
+        fontSize: 18.0,
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+      )),
+      
+      
+      SizedBox(height: 30.0),
+      Text(
+        '0 dt',
+        style: TextStyle(
+          fontSize: 14.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white
+        ),
+      )
+    ],),
+              ),
+              
+            ),
+            Container(
+             width: 100,
+             height: 30
+            ),
+           Container(
+             width: 100,
+             height: 130,
+             
+              child: Card(
+                margin: EdgeInsets.fromLTRB(40.0, 10.0, 40.0, 10.0),
+                color: Colors.lightBlue[400],
+                
+                 child: Column(children: <Widget>[
+      Text('Today Balance',
+      style: TextStyle(
+        fontSize: 18.0,
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+      )),
+      
+      
+      SizedBox(height: 30.0),
+      Text(
+        '0 dt',
+        style: TextStyle(
+          fontSize: 14.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white
+        ),
+      )
+    ],),
+              ),
+              
+            ),
+          ],
+        )
+        
+        );
   }
 }
 

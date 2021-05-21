@@ -4,7 +4,8 @@ import 'package:argon_flutter/constants/Theme.dart';
 
 //widgets
 import 'package:argon_flutter/widgets/navbar.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
+
+import 'drawer.dart';
 
 // ignore: must_be_immutable
 class Addcont extends StatelessWidget {
@@ -210,33 +211,7 @@ class Addcont extends StatelessWidget {
 
 
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Padding(
-                        padding:
-                        const EdgeInsets.only(left: 5.0, right: 5.0, top: 5),
-                        child: RaisedButton(
-                          textColor: ArgonColors.white,
-                          color: Colors.grey[400],
-                          onPressed: () {
-                            // Respond to button press
-                            Navigator.pushReplacementNamed(context, '/directory');
-                          },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          child: Padding(
-                              padding: EdgeInsets.only(
-                                  left: 16.0, right: 16.0, top: 12, bottom: 12),
-                              child: Text("Cancel ",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w600, fontSize: 16.0))),
-                        ),
-                      ),
-
-
-
-                    ),
+                   
 
                   ],
                   ),

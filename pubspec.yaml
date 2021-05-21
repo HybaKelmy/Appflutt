@@ -26,12 +26,12 @@ dependencies:
     sdk: flutter
   dio :
   fluttertoast : ^8.0.4
-  flutter_svg: ^0.18.0
+  flutter_svg: ^0.19.3
   font_awesome_flutter: ^8.8.1
   carousel_slider: ^2.2.1
   url_launcher: ^5.5.2
   scrollable_positioned_list: ^0.1.7
-  file_picker: ^1.3.6
+  file_picker: ^1.4.2
   google_fonts: ^1.1.0
   cupertino_icons: ^0.1.3
   flutter_clean_calendar: ^1.0.2+1
@@ -68,10 +68,10 @@ flutter:
    - assets/img/chat-avatar.jpeg
    - assets/img/argon-logo.png
    - assets/img/argon-logo-onboarding.png
-   - assets/img/aa.png
    - assets/img/ahla.png
    - assets/img/logowhite.png
    - assets/img/bb.jpg
+   - assets/salem.png
    - assets/img/ff.jpg
    - assets/icons/
    - assets/images/
@@ -85,6 +85,13 @@ flutter:
    - assets/list.png
    - assets/list.png
    - assets/images/doctor11.jpg
+   - assets/icons/ortho.png  
+   - assets/scope.png 
+   - assets/ped.png 
+   - assets/oo.png 
+   - assets/ne.png 
+   - assets/derma.png
+   
 
 
   fonts:

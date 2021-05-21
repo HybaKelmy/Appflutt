@@ -4,9 +4,10 @@ import 'package:argon_flutter/constants/Theme.dart';
 
 //widgets
 import 'package:argon_flutter/widgets/navbar.dart';
-import 'file:///C:/Users/salim/AndroidStudioProjects/app-care/lib/screens/doctor/drawer.dart';
 import 'package:argon_flutter/widgets/input.dart';
 import 'package:argon_flutter/widgets/table-cell.dart';
+
+import 'doctor/drawer.dart';
 
 class Elements extends StatefulWidget {
   @override

@@ -12,11 +12,11 @@ import 'home_screen_patient.dart';
 
 
 // ignore: must_be_immutable
-class DetailScreen extends StatelessWidget {
+class Asma extends StatelessWidget {
   var _description;
   var _imageUrl;
 
-  DetailScreen(this._description, this._imageUrl, imageUrl);
+  Asma(this._description, this._imageUrl, imageUrl);
 
   @override
   Widget build(BuildContext context) {

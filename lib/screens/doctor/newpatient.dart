@@ -2,6 +2,7 @@ import 'package:argon_flutter/constants/Theme.dart';
 import 'package:argon_flutter/screens/doctor/drawer.dart';
 import 'package:argon_flutter/services/service-doctor/addNewPatient.dart';
 import 'package:argon_flutter/widgets/navbar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -65,6 +66,57 @@ class _NewPatientState extends State<NewPatient> {
   List Child = [
     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   SingingCharacter _gender = SingingCharacter.Female;
+
+  var nameController = TextEditingController();
+
+
+
+
+  DateTime _date = DateTime(2021, 11, 17);
+  TimeOfDay _time = TimeOfDay(hour: 9, minute: 00);
+  TimeOfDay time;
+  TimeOfDay picked;
+  DateTime selectedDay;
+  List selectedEvent;
+  void _selectDate() async {
+    final DateTime newDate = await showDatePicker(
+      context: context,
+      initialDate: _date,
+      firstDate: DateTime(2017, 1),
+      lastDate: DateTime(2022, 7),
+      helpText: 'Select a date',
+    );
+    if (newDate != null) {
+      setState(() {
+        _date = newDate;
+      });
+    }
+  }
+  void _selectTime() async {
+    final TimeOfDay newTime = await showTimePicker(
+      context: context,
+      initialTime: _time,
+    );
+    if (newTime != null) {
+      setState(() {
+        _time = newTime;
+      });
+    }}
+
+  bool switchValueOne;
+  bool switchValueTwo;
+
+  void initState() {
+    setState(() {
+      switchValueOne = true;
+      switchValueTwo = false;
+    });
+    super.initState();
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -215,19 +267,22 @@ class _NewPatientState extends State<NewPatient> {
                                   fontSize: 16)),
                         ),
                       ),
-                      TextFormField(
-                        controller: dateOfBirthController,
-                        decoration: const InputDecoration(
-                            labelText: 'datefbirth',
-                            hintText: 'Enter the patient First name',
-                            border: OutlineInputBorder()),
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return 'Veuillez saisir un texte';
-                          }
-                          return null;
-                        },
-                      ),
+                          Container(
+                            padding: const EdgeInsets.only(left: 8.0, top: 20,bottom: 10),
+
+                            height: 100,
+                            child: CupertinoDatePicker(
+
+                              mode: CupertinoDatePickerMode.date,
+                              initialDateTime: DateTime(1969, 1, 1),
+                              onDateTimeChanged: (DateTime newDateTime) {
+                                setState(() {
+                                  _date = newDateTime;
+                                  print(newDateTime);
+                                });                              },
+                            ),
+                          ),
+                      
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0, top: 40),
                         child: Align(
@@ -547,21 +602,23 @@ class _NewPatientState extends State<NewPatient> {
                                         fontSize: 16.0
                                     );
                                   }
-                                });
-                              }
-                              Shape:
-                              RoundedRectangleBorder(
+                                }
+                                );
+
+    }
+
+
+    },
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4.0),
-                              );
-                              child:
-                              Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 16.0, right: 16.0, top: 12, bottom: 12),
-                                  child: Text("Add New Patient",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 16.0)));
-                            }),
+                              ),
+                              child: Padding(
+                              padding: EdgeInsets.only(
+                              left: 16.0, right: 16.0, top: 12, bottom: 12),
+                              child: Text("Add Patient",
+                              style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 16.0))),
+                            ),
                         ),
 
 
@@ -577,5 +634,3 @@ class _NewPatientState extends State<NewPatient> {
 
       );
     }}
-
-
